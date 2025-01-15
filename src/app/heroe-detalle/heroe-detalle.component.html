@@ -2,7 +2,9 @@
   <h2>{{ heroe.nombre | uppercase }} Detalles</h2>
   <div><span>id: </span>{{heroe.id}}</div>
   <div>
-    <label for="heroe-nombre">Nombre: </label>
-      <input id="heroe-nombre" [(ngModel)]="heroe.nombre" placeholder="nombre">
+    <label>nombre:
+      <input [(ngModel)]="heroe.nombre" placeholder="nombre"/>
+    </label>
   </div>
+  <button (click)="goBack()">Volver</button>
 </div>

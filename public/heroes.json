@@ -1,0 +1,8 @@
+[
+    { "id": 11,"nombre": "Lobezno","poderes":"garras"},
+    { "id": 12, "nombre": "Superman","poderes":"volar"},
+    { "id": 13, "nombre": "Spiderman","poderes":"fuerza"},
+    { "id": 14,"nombre": "Acuaman","poderes":"nadar"},
+    { "id": 15, "nombre": "Flax","poderes":"velocidad"},
+    { "id": 16, "nombre": "IronFist","poderes":"fuerza"}
+    ]

@@ -1,34 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../heroe';
-import { NgFor, UpperCasePipe, NgIf } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HeroeDetalleComponent } from '../heroe-detalle/heroe-detalle.component';
 import {GestionarHeroesService} from '../servicios/gestionar-heroes.service';
+import { RouterOutlet, RouterModule } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [UpperCasePipe, FormsModule,NgFor,NgIf,HeroeDetalleComponent],
+  imports: [RouterOutlet,RouterModule,NgFor],
   templateUrl: './heroes.component.html',
-  styleUrl: './heroes.component.css'
+  styleUrls: ['./heroes.component.css']
 })
+export class HeroesComponent implements OnInit {
 
-export class HeroesComponent {
+  heroes?: Heroe[];
 
-  heroes : Heroe[];
-   selectedHeroe?: Heroe;
-
-  constructor(private heroeServicio: GestionarHeroesService) {
-    this.heroes= [];
- }
+  constructor(private heroeServicio: GestionarHeroesService) { }
 
   getHeroes(): void {
      this.heroeServicio.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
    ngOnInit() {
       this.getHeroes();
-  }
-   onSelect(heroe: Heroe): void {
-    this.selectedHeroe = heroe;
   }
 }
