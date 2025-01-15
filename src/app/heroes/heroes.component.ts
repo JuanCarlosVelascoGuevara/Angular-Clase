@@ -23,7 +23,7 @@ export class HeroesComponent {
  }
 
   getHeroes(): void {
-     this.heroes = this.heroeServicio.getHeroes();
+     this.heroeServicio.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
    ngOnInit() {
       this.getHeroes();

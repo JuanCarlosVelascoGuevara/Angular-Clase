@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Heroe } from '../heroe';
-import { LISTAHEROES } from '../prueba-heroes';
+import { Observable, of } from 'rxjs';
+import { LISTAHEROES} from '../prueba-heroes';
+import { Heroe}  from '../heroe';
+import { MensajesService } from './mensajes.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root', })
+
 export class GestionarHeroesService {
-
-  constructor() { }
-  getHeroes(): Heroe[] {
-    return LISTAHEROES;
-}
+  constructor(private mensajeServicio: MensajesService) { }
+  getHeroes(): Observable<Heroe[]> {
+              this.mensajeServicio.add('Servicio heores: recuperando heroes');
+    	return of(LISTAHEROES);
+ }
 }

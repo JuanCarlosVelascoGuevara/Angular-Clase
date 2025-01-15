@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
+
+import { MensajesComponent } from "./mensajes/mensajes.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeroesComponent,],
+  imports: [RouterOutlet, MensajesComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
